@@ -19,36 +19,27 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
     @image.user = current_user
 
-    respond_to do |format|
-      if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    if @image.save
+      flash[:notice] = 'Image was successfully created.'
+      redirect_to @image
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @image.update(image_params)
-        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image }
-      else
-        format.html { render :edit }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    if @image.update(image_params)
+      flash[:notice] = 'Image was successfully updated.'
+      redirect_to @image
+    else
+      render :edit
     end
   end
 
   def destroy
     @image.destroy
-
-    respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:notice] = 'Image was successfully destroyed.'
+    redirect_to images_url
   end
 
   private
