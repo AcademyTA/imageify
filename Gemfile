@@ -36,6 +36,9 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'stripe'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 gem 'faker', require: false
 
