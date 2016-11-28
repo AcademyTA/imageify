@@ -55,3 +55,32 @@
 .btn-primary:visited, .btn-danger:visited {
   color: #fff;
 }
+
+.features {
+  ul {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+}
+
+.jumbotron {
+  text-align: center;
+  background-image: asset-url('imageify.jpg');
+  background-size: cover;
+  height:300px;
+  color: #ff7008;
+  font-stretch: expanded;
+  padding-top: 80px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-shadow: 5px 5px 3px rgba(50, 50, 50, .8);
+}
+
+.no-left-padding {
+  padding-left: 0 !important;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
